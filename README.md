@@ -45,6 +45,7 @@ sqlite3 sales.db
 .read analysis_queries.sql
 ```
 
+
 🗂️ Database Schema
 The project models a small e-commerce system with 4 main tables:
 
@@ -56,7 +57,10 @@ orders — customer orders with status and total amount
 
 order_items — line items for each order
 
+
+
 🔎 Example Queries
+
 Select all customers and their first 5 rows
 
 Join customers and orders to get sales history
@@ -67,7 +71,9 @@ Calculate monthly revenue and running totals
 
 Find customers with multiple completed orders
 
+
 📊 Sample Analysis
+
 ✅ Total revenue from completed orders
 
 ✅ Revenue contribution by customer
