@@ -35,12 +35,12 @@ sales-sql-project/
    sqlite3 --version
 Create a database and run schema + seed scripts:
 
-bash
+   ```bash
 sqlite3 sales.db < schema.sql
 sqlite3 sales.db < seed_data.sql
 Open the database and run queries:
 
-bash
+   ```bash
 sqlite3 sales.db
 .read queries.sql
 .read analysis_queries.sql
