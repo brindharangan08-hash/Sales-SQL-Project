@@ -1,17 +1,17 @@
-🛒 Sales SQL Project 
+## 🛒 Sales SQL Project 
 
 This repository contains a **beginner-friendly end-to-end SQL project** built on a small e-commerce sales database.  
 It includes schema design, sample data, seed scripts, and SQL queries for both practice and analysis.
 
-
+---
 
 ## 📌 Project Objectives
 - Learn how to design a relational database schema  
 - Practice creating tables and inserting sample data  
 - Explore SQL queries — filtering, joins, aggregates, CTEs, and window functions  
-- Perform beginner → intermediate level data analysis  
-
-
+- Perform beginner → intermediate level data analysis
+  
+---
 
 ## 📂 Project Structure
 sales-sql-project/
@@ -27,6 +27,7 @@ sales-sql-project/
 │ └─ order_items.csv
 └─ .gitignore
 
+---
 
 ## ⚙️ How to Run (Using SQLite)
 
@@ -48,9 +49,10 @@ sqlite3 sales.db
 .read queries.sql
 .read analysis_queries.sql
 ```
+---
 
+## 🗂️ Database Schema
 
-🗂️ Database Schema
 The project models a small e-commerce system with 4 main tables:
 
 customers — basic customer details
@@ -61,10 +63,9 @@ orders — customer orders with status and total amount
 
 order_items — line items for each order
 
+---
 
-
-🔎 Example Queries & 📊 Sample Analysis
-
+## 🔎 Example Queries & 📊 Sample Analysis
 
 ✅ Total revenue from completed orders
 ```sql
