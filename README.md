@@ -33,17 +33,17 @@ sales-sql-project/
    Check with:  
    ```bash
    sqlite3 --version
+   
 Create a database and run schema + seed scripts:
-
-   ```bash
+```bash
 sqlite3 sales.db < schema.sql
 sqlite3 sales.db < seed_data.sql
 Open the database and run queries:
 
-   ```bash
 sqlite3 sales.db
 .read queries.sql
 .read analysis_queries.sql
+```
 
 🗂️ Database Schema
 The project models a small e-commerce system with 4 main tables:
