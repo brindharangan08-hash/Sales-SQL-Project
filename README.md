@@ -59,28 +59,101 @@ order_items — line items for each order
 
 
 
-🔎 Example Queries
+🔎 Example Queries & 📊 Sample Analysis
 
-Select all customers and their first 5 rows
-
-Join customers and orders to get sales history
-
-Find top-selling products
-
-Calculate monthly revenue and running totals
-
-Find customers with multiple completed orders
-
-
-📊 Sample Analysis
 
 ✅ Total revenue from completed orders
+```sql
+SELECT SUM(total_amount) AS total_revenue
+FROM orders
+WHERE status = 'completed';
+```
+Output:
+
+| total\_revenue |
+| -------------- |
+| 301.47         |
+
 
 ✅ Revenue contribution by customer
+```sql
+SELECT c.first_name || ' ' || c.last_name AS customer_name,
+       SUM(o.total_amount) AS revenue
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+WHERE o.status = 'completed'
+GROUP BY c.customer_id
+ORDER BY revenue DESC;
+```
+Output:
+
+| customer\_name | revenue |
+| -------------- | ------- |
+| Anita Sharma   | 151.48  |
+| Asha Narayan   | 124.99  |
+| Raj Patel      | 25.00   |
+
 
 ✅ Orders per city
+```sql
+SELECT p.name, SUM(oi.quantity) AS total_qty
+FROM products p
+JOIN order_items oi ON p.product_id = oi.product_id
+JOIN orders o ON o.order_id = oi.order_id
+WHERE o.status = 'completed'
+GROUP BY p.product_id
+ORDER BY total_qty DESC;
+```
+Output:
+
+| name                        | total\_qty |
+| --------------------------- | ---------- |
+| USB-C Cable                 | 6          |
+| Noise-cancelling Headphones | 1          |
+| Wireless Mouse              | 1          |
+| Portable Charger            | 2          |
+| Mechanical Keyboard         | 1          |
+
 
 ✅ Average Order Value (AOV)
+```sql
+
+SELECT AVG(total_amount) AS avg_order_value
+FROM orders
+WHERE status = 'completed';
+```
+Output:
+
+| avg\_order\_value |
+| ----------------- |
+| 75.37             |
+
+
 
 ✅ Monthly revenue trend using CTEs + window functions
+```sql
+
+WITH monthly AS (
+  SELECT substr(order_date,1,7) AS month,
+         SUM(total_amount) AS revenue
+  FROM orders
+  WHERE status = 'completed'
+  GROUP BY month
+)
+SELECT month, revenue
+FROM monthly
+ORDER BY month;
+```
+Output:
+
+| month   | revenue |
+| ------- | ------- |
+| 2024-06 | 301.47  |
+
+
+
+📄 License
+
+MIT License © Brindha P
+
 
