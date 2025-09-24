@@ -40,8 +40,10 @@ sqlite3 --version
 ```bash
 sqlite3 sales.db < schema.sql
 sqlite3 sales.db < seed_data.sql
-Open the database and run queries:
+```
 
+3..Open the database and run queries:
+```bash
 sqlite3 sales.db
 .read queries.sql
 .read analysis_queries.sql
@@ -153,6 +155,14 @@ Output:
 | 2024-06 | 301.47  |
 
 
+---
+
+## 📝 Summary
+This project demonstrates how SQL can be used to design a database, manage data, and extract meaningful business insights.  
+Through this project, I learned how to design a relational schema, write SQL queries from basics to advanced, and analyze real-world sales data.  
+It helped me connect technical SQL skills with meaningful business insights like revenue trends, top customers, and best-selling products.  
+
+---
 
 📄 License
 
