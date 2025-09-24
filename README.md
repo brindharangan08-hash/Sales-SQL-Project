@@ -29,12 +29,14 @@ sales-sql-project/
 
 
 ## ⚙️ How to Run (Using SQLite)
-1. Install **SQLite** (already available on most systems).  
-   Check with:  
-   ```bash
-   sqlite3 --version
+
+1. Install **SQLite**  
+Check with:  
+```bash
+sqlite3 --version
+```
    
-Create a database and run schema + seed scripts:
+2. Create a database and run schema + seed scripts:
 ```bash
 sqlite3 sales.db < schema.sql
 sqlite3 sales.db < seed_data.sql
